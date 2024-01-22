@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "nodemon ./src/main.ts",
+        "deploy-migrate": "npx prisma migrate deploy && npm run start",
         "format": "prettier --write .",
         "lint-fix": "eslint --ignore-path .eslintignore . --fix"
     },
