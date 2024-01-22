@@ -1,8 +1,11 @@
+
+
 import Boom from '@hapi/boom'
 import { Response, NextFunction } from 'express'
 import { RequestWithUserObject, UserJWTPayload } from '../types'
 import { verifyAccessToken } from '../utils/token.util'
 
+//Authenticate token
 export function authenticateToken(
     req: RequestWithUserObject,
     res: Response,
@@ -24,6 +27,7 @@ export function authenticateToken(
     }
 }
 
+//Check admin or not
 export function isAdmin(
     req: RequestWithUserObject,
     res: Response,
@@ -34,6 +38,21 @@ export function isAdmin(
     if (user && user.isAdmin) {
         next()
     } else {
-        throw Boom.forbidden('User is not an admin')
+        throw Boom.forbidden('User is not allowed')
+    }
+}
+
+//Check user or not
+export function isUser(
+    req: RequestWithUserObject,
+    res: Response,
+    next: NextFunction
+) {
+    const { user } = req
+
+    if (!(user && user.isAdmin)) {
+        next()
+    } else {
+        throw Boom.forbidden('Admin not allowed')
     }
 }

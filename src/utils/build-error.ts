@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import HttpStatus from 'http-status-codes'
 import { ZodError } from 'zod'
 
@@ -21,6 +18,7 @@ function buildError(err: any) {
             message: err.output.payload.message || err.output.payload.error,
         }
     }
+    console.log('here?')
 
     console.log(err)
 

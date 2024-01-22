@@ -1,11 +1,12 @@
-import { Request } from "express";
+import { Request } from 'express'
 
 export interface RequestWithUserObject extends Request {
     user: UserJWTPayload
-  }
+}
 
-  export interface UserJWTPayload {
-      email: string;
-      password: string;
-      isAdmin: boolean
-  }
+export interface UserJWTPayload {
+    email: string
+    password: string
+    isAdmin: boolean
+    id: number
+}
