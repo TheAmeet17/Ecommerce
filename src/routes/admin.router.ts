@@ -39,4 +39,3 @@ router.post('/forgot-password', () => {
 
 export default router
 
-//how to add date in every request and response ??

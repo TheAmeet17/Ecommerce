@@ -4,7 +4,7 @@ import { RequestWithUserObject } from '../types'
 import { loginBodySchema } from '../validators/auth.validator'
 
 
-//Login user
+//Login admin user
 export const userLogin = async (
     req: Request,
     res: Response,

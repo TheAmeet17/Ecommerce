@@ -15,7 +15,6 @@ export const getOrders = async (
         next(e)
     }
 }
-
 export const createOrder = async (
     req: Request,
     res: Response,
